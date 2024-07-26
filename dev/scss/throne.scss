@@ -1,0 +1,34 @@
+:root {
+    --white: #fafafa;
+    --black: #090909;
+    --green: #55dd01;
+
+    --side-padding: 40px;
+
+    --border-black: 1px solid var(--black);
+}
+
+@import './reset.scss';
+
+body {
+    font-size: 14px;
+    font-family: 'en';
+    border-collapse: collapse;
+}
+
+p, a, button, input {
+    font-family: 'en';
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+a:hover {
+    color: var(--green);
+}
+
+@import './header.scss';
+@import './cart-drawer.scss';
+@import './footer.scss';

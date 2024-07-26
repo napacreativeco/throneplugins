@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+    text-transform: uppercase;
+
+    nav#site-navigation {
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+
+    nav#shop-navigation {
+
+        .cart-count {
+            font-size: 34px;
+            cursor: pointer;
+        }
+        .cart-count:hover {
+            color: var(--green);
+        }
+
+    }
+}
