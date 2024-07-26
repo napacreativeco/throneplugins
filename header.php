@@ -48,9 +48,11 @@
 				?>
 			</nav>
 
-			<a href="/" title="Throne Systems">
-				<h1>Throne Systems</h1>
-			</a>
+			<div class="center">
+				<a href="/" title="Throne Systems">
+					<h1>Throne Systems</h1>
+				</a>
+			</div>
 
 			<nav id="shop-navigation" class="shop-navigation">
 				<div class="cart-count open-drawer">

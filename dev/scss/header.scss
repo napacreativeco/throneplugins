@@ -1,8 +1,10 @@
 header {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
+    // display: flex;
+    // flex-direction: row;
+    // align-items: flex-start;
+    // justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
     padding: 10px;
     text-transform: uppercase;
 
@@ -16,7 +18,13 @@ header {
         }
     }
 
+    .center {
+        text-align: center;
+    }
+
     nav#shop-navigation {
+        display: flex;
+        justify-content: flex-end;
 
         .cart-count {
             font-size: 34px;
