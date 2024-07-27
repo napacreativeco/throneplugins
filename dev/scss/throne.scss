@@ -57,6 +57,7 @@ a:hover {
     opacity: 1;
     animation: archiveshift infinite;
     animation-duration: 14s;
+    overflow: hidden;
 }
 
 .shape-product {
@@ -67,6 +68,7 @@ a:hover {
     opacity: 1;
     animation: productshift infinite;
     animation-duration: 14s;
+    overflow: hidden;
 }
 
 @keyframes archiveshift {
