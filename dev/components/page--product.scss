@@ -28,10 +28,6 @@ div.single-product {
         font-size: 34px;
     }
 
-    h1 {
-        
-    }
-
     .quantity {
         //margin-bottom: 20px;
 
@@ -118,6 +114,19 @@ div.single-product {
 
         .details-body {
             padding: 20px 0;
+
+            h3 {
+                font-size: 24px;
+            }
+
+            p {
+                margin: 0 0 10px 0;
+            }
+
+            em {
+                font-size: 18px;
+                margin: 0 0 20px 0;
+            }
         }
 
     }
