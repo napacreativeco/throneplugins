@@ -42,6 +42,16 @@
 	});
 </script>
 
+<script>
+	jQuery('.remove_item').on( 'click', function() {
+		setTimeout(function() {
+			window.location.reload();
+		}, 1500);
+	});
+
+		
+</script>
+
 <?php wp_footer(); ?>
 
 </body>

@@ -37,6 +37,7 @@ if ( post_password_required() ) {
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/compiled/page--product.css">
 
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'single-product', $product ); ?>>
+	
 
 	<div class="top">
 		<div class="left">
@@ -69,6 +70,28 @@ if ( post_password_required() ) {
 				do_action( 'woocommerce_single_product_summary' );
 				?>
 			</div>
+
+			<div class="accordions">
+				<details>
+					<summary>
+						<div>Formats</div>
+						<div class="icon"><?php get_template_part('/template-parts/icon--arrow-angled'); ?></div>
+					</summary>
+					<div class="details-body">
+						<?php the_field('formats'); ?>
+					</div>
+				</details>
+				<details>
+					<summary>
+						<div>Installation</div>
+						<div class="icon"><?php get_template_part('/template-parts/icon--arrow-angled'); ?></div>
+					</summary>
+					<div class="details-body">
+						<?php the_field('installation'); ?>
+					</div>
+				</details>
+			</div>
+
 		</div>
 	</div>
 

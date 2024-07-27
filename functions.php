@@ -50,7 +50,10 @@ function throne_systems_setup() {
 		}
 	}
 
-	
+
+	add_action( 'woocommerce_before_single_product', function() {
+		add_filter( 'woocommerce_product_get_gallery_image_ids', '__return_empty_array' );
+	} );
 
 	/*
 		* Enable support for Post Thumbnails on posts and pages.
@@ -116,6 +119,10 @@ function throne_systems_setup() {
 }
 add_action( 'after_setup_theme', 'throne_systems_setup' );
 
+
+add_action("wp_enqueue_scripts", function() {
+	wp_enqueue_script( 'wc-cart-fragments' );
+});
 
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 

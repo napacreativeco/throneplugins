@@ -7,16 +7,29 @@ div.single-product {
         padding: 0 10px;
     }
 
+    .left {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
 
-    .summary {
-        height: 100%;
+    .right {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        justify-content: flex-start;
+    }
+
+    .summary {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        font-size: 34px;
     }
 
     h1 {
-        font-size: 34px;
+        
     }
 
     .quantity {
@@ -47,8 +60,78 @@ div.single-product {
     }
 
     .description {
-        padding: 10px;
-        font-size: 24px;
+        padding: 80px 10px;
+        font-size: 34px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
     }
 
+    .accordions {
+        border-top: var(--border-black);
+        margin: 20px 0 0 0;
+
+                
+        summary {
+            list-style: none;
+            font-size: 34px;
+            padding: 10px 0;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            .icon {
+                display: flex;
+                align-items: center;
+            }
+
+            svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            path {
+                fill: var(--black);
+            }
+        }
+
+        summary:hover {
+            path {
+                fill: var(--green);
+            }
+        }
+
+        details {
+            border-bottom: var(--border-black);
+        }
+        
+        details[open] {
+            summary {
+                path {
+                    fill: var(--green);
+                }
+            }
+        }
+
+        .details-body {
+            padding: 20px 0;
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+ 
+    div.single-product {
+
+        .top {
+            grid-template-columns: 1fr;
+        }
+
+    }
+    
 }

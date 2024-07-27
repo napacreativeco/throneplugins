@@ -133,3 +133,11 @@
 .cart-drawer.open-drawer {
     right: 0px !important;
 }
+
+
+@media screen and (max-width: 767px) {
+
+    .cart-drawer {
+        width: 80%;
+    }
+}

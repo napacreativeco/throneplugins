@@ -8,6 +8,12 @@
     --border-black: 1px solid var(--black);
 }
 
+@media screen and (max-width: 767px) {
+    :root {
+        --side-padding: 10px;
+    }
+}
+
 @import './reset.scss';
 
 body {
@@ -27,6 +33,61 @@ a {
 
 a:hover {
     color: var(--green);
+}
+
+
+.shape {
+    position: absolute;
+    bottom: -20%;
+    right: auto;
+    left: 30%;
+    filter: blur(100px);
+    z-index: -1;
+    width: 50%;
+    opacity: 1;
+    animation: archiveshift infinite;
+    animation-duration: 14s;
+}
+
+.shape-archive {
+    position: absolute;
+    filter: blur(150px);
+    z-index: -1;
+    width: 50%;
+    opacity: 1;
+    animation: archiveshift infinite;
+    animation-duration: 14s;
+}
+
+@keyframes archiveshift {
+    0% { left: 0%; bottom: -20%; transform: rotate(180deg); }
+    50% { left: 10%; bottom: 20%; ransform: rotate(-180deg); }
+    75% { left: 60%; bottom: 50%; ransform: rotate(360deg); }
+    100% { left: 0%; bottom: -20%; transform: rotate(180deg); }
+}
+
+.woocommerce-error,
+.woocommerce-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: var(--border-black);
+    border-radius: 50px;
+    margin: 10px;
+    text-transform: uppercase;
+
+    a {
+        display: none;
+    }
+}
+
+main {
+    min-height: calc(100svh - 52px);
+}
+
+.entry-content {
+    padding: 0 10px;
 }
 
 @import './header.scss';
