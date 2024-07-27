@@ -1,0 +1,11 @@
+.wc-block-components-checkout-place-order-button {
+    border: var(--border-black);
+    border-radius: 50px;
+    background: var(--green);
+    font-size: 24px;
+}
+
+.wc-block-components-checkout-place-order-button::hover {
+    background: var(--black);
+    color: var(--green);
+}
