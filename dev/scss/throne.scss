@@ -59,10 +59,27 @@ a:hover {
     animation-duration: 14s;
 }
 
+.shape-product {
+    position: absolute;
+    filter: blur(150px);
+    z-index: -1;
+    width: 50%;
+    opacity: 1;
+    animation: productshift infinite;
+    animation-duration: 14s;
+}
+
 @keyframes archiveshift {
     0% { left: 0%; bottom: -20%; transform: rotate(180deg); }
     50% { left: 10%; bottom: 20%; ransform: rotate(-180deg); }
     75% { left: 60%; bottom: 50%; ransform: rotate(360deg); }
+    100% { left: 0%; bottom: -20%; transform: rotate(180deg); }
+}
+
+@keyframes productshift {
+    0% { left: 0%; bottom: -20%; transform: rotate(180deg); }
+    50% { left: 10%; bottom: 20%; ransform: rotate(-180deg); }
+    75% { left: 60%; bottom: -50%; ransform: rotate(360deg); }
     100% { left: 0%; bottom: -20%; transform: rotate(180deg); }
 }
 
