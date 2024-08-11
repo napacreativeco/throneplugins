@@ -1,11 +1,19 @@
 :root {
-    --white: #fafafa;
-    --black: #090909;
+    --white: #e3e3e3;
+    --black: #191919;
     --green: #55dd01;
+    --light-grey: #dbdbdb;
 
     --side-padding: 40px;
 
     --border-black: 1px solid var(--black);
+    --border-white: 1px solid var(--white);
+    --border-green: 1px solid var(--green);
+
+    --large-font: 54px;
+
+    --sans-serif: Arial, sans-serif;
+    --serif: 'en';
 }
 
 @media screen and (max-width: 767px) {
@@ -20,7 +28,15 @@ body {
     font-size: 14px;
     font-family: 'en';
     border-collapse: collapse;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.2;
 }
+
+body.admin-bar main {
+    margin-top: 32px;
+}
+
 
 p, a, button, input {
     font-family: 'en';
@@ -35,37 +51,69 @@ a:hover {
     color: var(--green);
 }
 
+em {
+    font-style: italic;
+}
+
+main {
+    min-height: calc(100svh - 52px);
+    padding: 56px var(--side-padding) 0px var(--side-padding);
+}
+
+
+
+.section-title {
+    text-align: left;
+    border-bottom: 1px solid var(--white);
+    width: 100%;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+}
+
+.section-title.no-border {
+    border-bottom:  0;
+}
+
+.entry-content {
+    padding: 0 10px;
+}
+
+.woocommerce-breadcrumb {
+    border-bottom: var(--border-white);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
 
 .shape {
-    position: absolute;
+    position: fixed;
     bottom: -20%;
     right: auto;
     left: 30%;
     filter: blur(100px);
     z-index: -1;
     width: 50%;
-    opacity: 1;
+    opacity: 0.1;
     animation: archiveshift infinite;
     animation-duration: 14s;
 }
 
 .shape-archive {
-    position: absolute;
+    position: fixed;
     filter: blur(150px);
     z-index: -1;
     width: 50%;
-    opacity: 1;
+    opacity: 0.1;
     animation: archiveshift infinite;
     animation-duration: 14s;
     overflow: hidden;
 }
 
 .shape-product {
-    position: absolute;
+    position: fixed;
     filter: blur(150px);
     z-index: -1;
     width: 50%;
-    opacity: 1;
+    opacity: 0.1;
     animation: productshift infinite;
     animation-duration: 14s;
     overflow: hidden;
@@ -91,9 +139,9 @@ a:hover {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    border: var(--border-black);
+    border: var(--border-white);
     border-radius: 50px;
-    margin: 10px;
+    margin: 30px 0 10px 0;
     text-transform: uppercase;
 
     a {
@@ -101,14 +149,8 @@ a:hover {
     }
 }
 
-main {
-    min-height: calc(100svh - 52px);
-}
 
-.entry-content {
-    padding: 0 10px;
-}
-
+@import './grain.scss';
 @import './header.scss';
 @import './cart-drawer.scss';
 @import './footer.scss';

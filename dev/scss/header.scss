@@ -1,34 +1,100 @@
 header {
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
-    padding: 10px;
+    align-items: center;
     text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 8;
+    font-family: var(--sans-serif);
+
+    a {
+        font-family: var(--sans-serif); 
+    }
 
     nav#site-navigation {
+        padding: 10px 0 0 var(--side-padding);
+        
         ul {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            gap: 8px;
+            gap: 20px;
         }
     }
 
     .center {
         text-align: center;
+        padding: 10px 0 0 0;
+
+        svg {
+            width: 209px;
+            height: 35px;
+
+            path {
+                fill: white;
+                transition: all 0.2s ease-in-out;
+            }
+            
+        }
+
+        svg:hover path {
+            fill: var(--green) !important;
+        }
     }
 
     nav#shop-navigation {
         display: flex;
         justify-content: flex-end;
+        position: relative;
+
+        svg {
+            margin: 0 0 2px 0;
+
+            path {
+                stroke: var(--black);
+                stroke-width: 2px;
+            }
+        }
 
         .cart-count {
-            font-size: 34px;
+            font-size: 24px;
             cursor: pointer;
+            background: var(--light-grey);
+            color: var(--black);
+            padding: 10px 20px 10px 20px;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            transition: all 0.3s ease-in-out;
+            position: absolute;
+            top: -20px;
+            margin: 0px 0 0 0;
+            letter-spacing: -2px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 6px;
         }
+        
         .cart-count:hover {
-            color: var(--green);
+            background: var(--green);
+            color: var(--black);
+            padding: 10px 30px 10px 20px;
         }
 
     }
+
+    .current_page_item {
+        color: var(--green);
+    }
+}
+
+body.admin-bar header {
+    position: fixed;
+    top: 32px;
+    left: 0;
+    right: 0;
 }

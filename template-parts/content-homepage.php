@@ -1,7 +1,12 @@
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/compiled/page--home.css">
-
 <div class="homepage">
-    <?php the_content(); ?>
+    
+    <div class="content">
+        <?php the_content(); ?>
+    </div>
+    
+
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/compiled/page--shop.css">
+    <?php get_template_part( 'template-parts/shop', 'archive'); ?>
 </div>
 
 <svg class="shape" width="100%" height="100%" viewBox="0 0 755 559" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">

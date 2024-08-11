@@ -15,42 +15,19 @@
 get_header('shop');
 ?>
 
+
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/compiled/page--shop.css">
 
-<ul class="products">
-    <?php
-    $args = array( 'post_type' => 'product' );
-    $loop = new WP_Query( $args );
-    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $loop->post->ID ), 'single-post-thumbnail' );
+<main>
 
-    while ( $loop->have_posts() ) : $loop->the_post(); ?>
+    <div class="shop-description">
+        Plugins
+    </div>
 
-        <?php
-        global $product;
-        $attachment_ids = $product->get_gallery_image_ids();
+    <?php get_template_part( 'template-parts/shop', 'archive'); ?>
 
-        foreach( $attachment_ids as $attachment_id ) {
-            $image_link = wp_get_attachment_url( $attachment_id );
-        }
-        ?>
+</main>
 
-        <li class="product" onclick="window.location='<?php echo get_permalink( $loop->post->ID ) ?>';">
-            <div class="background-image" style="background: url('<?php echo $image_link ?>'); background-size: cover; background-position: center center;">    
-            </div>
-            <div class="top">
-                <h2 class="title"><?php the_title(); ?></h2>
-
-                <p>AU, VST3, Standalone</p>
-                <p class="price">$<?php echo $product->get_price() ?></p>
-            </div>
-            <div class="image">
-                <img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
-            </div>
-        </li>
-
-
-    <?php endwhile; wp_reset_query(); // Remember to reset ?>
-</ul>
 
 <svg class="shape-archive" width="100%" height="100%" viewBox="0 0 660 918" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g transform="matrix(1,0,0,1,-3657.43,-768.488)">

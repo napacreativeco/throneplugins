@@ -1,62 +1,62 @@
+.shop-header {
+    font-size: 18px;
+    font-family: var(--sans-serif);
+    margin: 0 0 20px 0;
+}
+
+.shop-description {
+    font-size: var(--large-font);
+    margin: 0 0 30px 0;
+}
+
 ul.products {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 
     li {
-        background: var(--white);
-        border: var(--border-black);
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
+        border-bottom: var(--border-white);
+        padding: 0 0 20px 0;
+        display: grid;
+        grid-template-columns: 30vw 1fr 1fr auto;
+        align-items: flex-end;
+        grid-gap: 40px;
         position: relative;
+        cursor: pointer;
 
-        .background-image {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 0;
-            opacity: 0;
-            transition: all 0.3s ease-in;
+        .title h2 {
+            font-size: var(--large-font);
+            text-align: left;
         }
 
-        .top {
-            align-self: flex-start;
-            justify-content: flex-start;
-            margin-bottom: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            font-size: 24px;
-            position: relative;
-            z-index: 1;
+        .title h2:hover {
+            color: var(--green);
         }
 
-        .title {
-            
+        .title p {
+            font-family: var(--sans-serif);
         }
 
         .image {
-            align-self: flex-end;
-            justify-self: flex-end;
-            width: 70%;
-
+  
             img {
                 width: 100%;
                 display: block;
             }
         }
 
+        .description p {
+            font-family: var(--sans-serif);
+        }
+
+        .price p {
+            font-family: var(--sans-serif);
+        }
+
     }
 
     li:hover {
         color: var(--green);
-
-        .background-image {
-            opacity: 1;
-        }
     }
 }
 

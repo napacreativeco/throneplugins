@@ -1,23 +1,44 @@
-div.single-product {
+.single-product {
 
     .top {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 30px;
-        padding: 0 10px;
+        padding: 0 0px;
     }
 
     .left {
         img {
             width: 100%;
             height: auto;
+            border-radius: 40px;
+        }
+
+        a {
+            display: block;
         }
     }
 
     .right {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-between;
+        padding: 20px 0px 20px 0;
+    }
+
+    h1 {
+        font-size: var(--large-font);
+    }
+
+    p.price {
+        font-family: var(--sans-serif);
+        font-size: 18px;    
+    } 
+
+    .woocommerce-product-details__short-description p {
+        font-family: var(--sans-serif);
+        font-size: 18px;
+        padding: 20px 0;
     }
 
     .summary {
@@ -25,7 +46,7 @@ div.single-product {
         display: flex;
         flex-direction: column;
         gap: 12px;
-        font-size: 34px;
+        font-size: 18px;
     }
 
     .quantity {
@@ -36,9 +57,14 @@ div.single-product {
             border-top: 0;
             border-right: 0;
             border-left: 0;
-            border-bottom: var(--border-black);
+            border-bottom: var(--border-white);
             background: transparent;
         }
+    }
+
+    /* Temporary hide */
+    .single_add_to_cart_button {
+        display: none;
     }
 
     button[type="submit"] {
@@ -48,14 +74,23 @@ div.single-product {
         padding: 6px 10%;
         font-size: 30px;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .temp-button {
+        color: var(--green);
+        font-size: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        pointer-events: none;
     }
 
     button[type="submit"]:hover {
-        background: var(--black);
-        color: var(--green);
+        background: var(--light-grey);
+        color: var(--black);
     }
 
-    .description {
+    .long-description {
         padding: 80px 10px;
         font-size: 34px;
         display: flex;
@@ -66,8 +101,8 @@ div.single-product {
     }
 
     .accordions {
-        border-top: var(--border-black);
-        margin: 20px 0 0 0;
+        border-top: var(--border-white);
+        margin: 20px 0 40px 0;
 
                 
         summary {
@@ -91,7 +126,7 @@ div.single-product {
             }
 
             path {
-                fill: var(--black);
+                fill: var(--white);
             }
         }
 
@@ -102,7 +137,7 @@ div.single-product {
         }
 
         details {
-            border-bottom: var(--border-black);
+            border-bottom: var(--border-white);
         }
         
         details[open] {

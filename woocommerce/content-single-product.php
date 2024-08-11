@@ -36,7 +36,10 @@ if ( post_password_required() ) {
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/compiled/page--product.css">
 
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'single-product', $product ); ?>>
+
+<?php /* woocommerce_breadcrumb(); */ ?>
+
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'single-product page-container', $product ); ?>>
 	
 
 	<div class="top">
@@ -69,35 +72,51 @@ if ( post_password_required() ) {
 				 */
 				do_action( 'woocommerce_single_product_summary' );
 				?>
-			</div>
-
-			<div class="accordions">
-				<details>
-					<summary>
-						<div>Formats</div>
-						<div class="icon"><?php get_template_part('/template-parts/icon--arrow-angled'); ?></div>
-					</summary>
-					<div class="details-body">
-						<?php the_field('formats'); ?>
-					</div>
-				</details>
-				<details>
-					<summary>
-						<div>Installation</div>
-						<div class="icon"><?php get_template_part('/template-parts/icon--arrow-angled'); ?></div>
-					</summary>
-					<div class="details-body">
-						<?php the_field('installation'); ?>
-					</div>
-				</details>
+				<p class="temp-button">Coming soon</p>
 			</div>
 
 		</div>
 	</div>
 
-	<div class="description">
+	<div class="long-description">
 		<?php the_content(); ?>
 	</div>
+
+	<div class="accordions">
+		<details>
+			<summary>
+				<div>Formats</div>
+				<div class="icon"><?php get_template_part('/template-parts/icon--arrow-angled'); ?></div>
+			</summary>
+			<div class="details-body">
+				<?php the_field('formats'); ?>
+			</div>
+		</details>
+		<details>
+			<summary>
+				<div>Installation</div>
+				<div class="icon"><?php get_template_part('/template-parts/icon--arrow-angled'); ?></div>
+			</summary>
+			<div class="details-body">
+				<?php the_field('installation'); ?>
+			</div>
+		</details>
+	</div>
+
+	<div class="reviews">
+		
+		<?php
+		/**
+		 * Hook: woocommerce_after_single_product_summary.
+		 *
+		 * @hooked woocommerce_output_product_data_tabs - 10
+		 * @hooked woocommerce_upsell_display - 15
+		 * @hooked woocommerce_output_related_products - 20
+		 */
+		//do_action( 'woocommerce_after_single_product_summary' );
+		?>
+	</div>
+
 </div>
 
 <svg class="shape-product" width="100%" height="100%" viewBox="0 0 822 908" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
